@@ -1,0 +1,161 @@
+/* Mobile first display */
+/* Resetting default browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column; /* Stack items vertically on mobile */
+  gap: 20px;
+  min-height: 100vh;
+  padding: 20px;
+  justify-items: center; /* Center all items horizontally */
+}
+
+/* Header styling */
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Main content section (form) */
+main {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Max width for the form */
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3498db;
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Stack form fields vertically */
+  gap: 15px;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+input[type="text"] {
+  padding: 12px;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input[type="radio"] {
+  transform: scale(1.5); /* Increase size of radio buttons */
+  margin-top: 5px;
+}
+
+input[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9; 
+}
+
+/* Weather display section */
+.weather-display {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+  display: flex; /* Use flexbox for weather display */
+  justify-content: center; /* Center content inside the weather display */
+  align-items: center; /* Align vertically */
+  height: 100%; /* Ensure it takes up available height */
+}
+
+.weather-display h1 {
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+/* Tablet media query */
+@media (min-width: 768px) and (max-width: 1024) {
+  body {
+    flex-direction: row; /* Row layout for tablet and larger screens */
+    justify-content: space-between; /* Space out form and weather display */
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  main {
+    flex: 0 1 500px; /* Form takes up fixed width */
+  }
+
+  .weather-display {
+    flex-grow: 1; /* Weather display takes up remaining space */
+    height: auto; /* Allow it to grow with content */
+    max-width: 100%; /* Ensure it stretches to full available width */
+  }
+}
+
+/* Desktop media query */
+@media (min-width: 1025px) {
+  body {
+    padding: 40px;
+    gap: 40px; /* Add space between form and weather display */
+    height: 100vh; /* Full viewport height */
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  main {
+    flex: 0 1 600px; /* Form has a fixed width */
+  }
+
+  .weather-display {
+    flex-grow: 1; /* Weather display takes up remaining space */
+    height: 50vh; /* Ensure it stays within 50% height on large screens */
+    justify-content: center; /* Center content vertically */
+  }
+
+  .weather-display h1 {
+    font-size: 1.5rem;
+    color: #3498db;
+  }
+}

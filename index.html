@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather API</title>
+  <script src="script.js"></script> 
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Weather App</h1>
+    </header>
+    <h2>Search for City</h2>
+    <form class="weather" id="weather-form">
+      <label for="city"><strong>Enter City Name:</strong></label><br>
+      <input type="text" id="city" name="city"><br><br> 
+      <div id="error-message" style="color: red; display: none;"></div>
+      <label for="fahren"><strong>Fahrenheit</strong></label>
+      <input type="radio" id="fahren" name="temp" value="fahrenheit"> 
+      <label for="celsius"><strong>Celsius</strong></label>
+      <input type="radio" id="celsius" name="temp" value="celsius" checked> <br><br>
+      <input type="submit" id="submitButton" value="Submit">
+    </form>
+  </main>
+
+  <section class="weather-display" id="weather-info">
+    <h1>Weather data will be displayed here</h1>
+  </section>
+</body>
+</html>

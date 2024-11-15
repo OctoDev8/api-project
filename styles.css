@@ -13,7 +13,7 @@ body {
   color: #333;
   line-height: 1.6;
   display: flex;
-  flex-direction: column; /* Stack items vertically on mobile */
+  flex-direction: column; /* Start with a column layout on mobile */
   gap: 20px;
   min-height: 100vh;
   padding: 20px;
@@ -99,9 +99,11 @@ input[type="submit"]:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   padding: 20px;
-  display: flex; /* Use flexbox for weather display */
-  justify-content: center; /* Center content inside the weather display */
-  align-items: center; /* Align vertically */
+  display: flex;
+  flex-direction: column; /* Stack weather data items vertically */
+  gap: 10px; /* Space between weather data items */
+  justify-content: center;
+  align-items: center;
   height: 100%; /* Ensure it takes up available height */
 }
 
@@ -111,9 +113,9 @@ input[type="submit"]:hover {
 }
 
 /* Tablet media query */
-@media (min-width: 768px) and (max-width: 1024) {
+@media (min-width: 768px) and (max-width: 1024px) {
   body {
-    flex-direction: row; /* Row layout for tablet and larger screens */
+    flex-direction: row; /* Change to row layout on tablet and up */
     justify-content: space-between; /* Space out form and weather display */
   }
 
@@ -138,6 +140,9 @@ input[type="submit"]:hover {
     padding: 40px;
     gap: 40px; /* Add space between form and weather display */
     height: 100vh; /* Full viewport height */
+    flex-direction: row; /* Ensure layout is in a row for large screens */
+    justify-content: space-between; /* Space out form and weather display */
+    align-items: flex-start; /* Align to the top */
   }
 
   header h1 {
@@ -151,7 +156,7 @@ input[type="submit"]:hover {
   .weather-display {
     flex-grow: 1; /* Weather display takes up remaining space */
     height: 50vh; /* Ensure it stays within 50% height on large screens */
-    justify-content: center; /* Center content vertically */
+    justify-content: flex-start; /* Align content at the top */
   }
 
   .weather-display h1 {

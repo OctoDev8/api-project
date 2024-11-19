@@ -31,8 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-       - name: Replace API Key Placeholder
-        run: sed -i 's/__API_KEY__/${{ secrets.API_KEY }}/' <script>.js
+      - name: Replace API Key Placeholder
+        run: sed -i 's/__API_KEY__/${{ secrets.API_KEY }}/' script.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -43,13 +43,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        - name: Show default environment variables
-                        run: |
-                        echo "The job_id is: $GITHUB_JOB"   # reference the def$
-                echo "The id of this action is: $GITHUB_ACTION"   # reference t$
-           echo "The run id is: $GITHUB_RUN_ID"
-          echo "The GitHub Actor's username is: $GITHUB_ACTOR"
-          echo "GitHub SHA: $GITHUB_SHA"
-          echo "Github secret: ${{ secrets.API_KEY }}"
-
-
+      - name: Show default environment variables
+        run: | 
+             echo "The job_id is: $GITHUB_JOB"   # reference the default 	environment variables
+             echo "The id of this action is: $GITHUB_ACTION"   # reference the default environment variables
+             echo "The run id is: $GITHUB_RUN_ID"
+             echo "The GitHub Actor's username is: $GITHUB_ACTOR"
+             echo "GitHub SHA: $GITHUB_SHA"
+             echo "Github secret: ${{ secrets.API_KEY }}"

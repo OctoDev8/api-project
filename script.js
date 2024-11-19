@@ -1,4 +1,4 @@
-const apiKey = "c0bc97f7feb24972bce211137241311";
+const apiKey = "__API_KEY__";
 const endpoint = 'https://api.weatherapi.com/v1/current.json';
 
 // Make sure JavaScript only loads after everything else
